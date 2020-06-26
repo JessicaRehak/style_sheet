@@ -2,7 +2,20 @@
 \usepackage{amsmath}
 \usepackage{fancyhdr}
 \usepackage{geometry}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+% Correct subfigure numbering
+\usepackage{caption, subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\captionsetup[sub]{
+  labelformat=simple
+}
+% ===========================
+% Colored code blocks
+\usepackage{xcolor, listings}
+\definecolor{light-gray}{gray}{0.95}
+\lstset{backgroundcolor=\color{light-gray},basicstyle=\footnotesize\ttfamily}
+% ===========================
 \geometry{
   letterpaper,
   left=0.5in,
@@ -28,7 +41,8 @@
 
 \begin{multicols}{2}
 \raggedcolumns
-Tables, Figures and Captions
+Tables, Figures and Captions (see Sec.~\ref{sec:latex} for formatting
+properly in \LaTeX).
 \begin{itemize}
 \item In Eq.~(13),~(14), and~(16)
 \item In Fig.~4(a)
@@ -272,6 +286,61 @@ slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
 
 \section{Other \LaTeX{} specific items}\label{sec:latex}
 
+\subsubsection*{Package settings}
+\begin{itemize}
+\item Always hide boxes from hyperref package:
+\begin{lstlisting}
+  \usepackage[hidelinks]{hyperref}
+\end{lstlisting}
+\end{itemize}
+
+
+\subsubsection*{References and citations}
+
+\begin{itemize}
+\item For equations, use the amsmath \verb|\eqref{label}| function.
+  \begin{equation}\label{eq:relativity}
+    E = mc^2
+  \end{equation}
+  This correctly formats \verb|Eq.~\eqref{eq:relativity}| as
+  Eq.~\eqref{eq:relativity}.
+\item Use \verb|Sec.~\ref{sec:latex}| for sections, which correctly
+  formats as Sec.~\ref{sec:latex}.
+\item For figures, use \verb|Fig.~\ref{fig:image}|, which correctly
+  formats as Fig.~\ref{fig:image}.
+\item For subfigures, include the packages and commands:
+\begin{lstlisting}
+\usepackage{caption, subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\captionsetup[sub]{labelformat=simple}
+\end{lstlisting}
+and reference the subfigure itself,
+which will format correctly as Fig.~\ref{fig:multifig_a}. See
+documentation for these packages if needed.
+\end{itemize}
+
+\begin{figure*}[b]
+  \centering
+  \includegraphics[width=0.2\textwidth]{example-image.pdf}
+  \caption{Single figure}
+  \label{fig:image}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{example-image.pdf}
+    \caption{}\label{fig:multifig_a}
+  \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{example-image.pdf}
+    \caption{}\label{fig:multifig_b}
+  \end{subfigure}\hfill
+  \caption{Subfigure with parts (a) and (b).}
+  \label{fig:multifig}
+\end{figure*}
+
+
 \subsubsection*{Spacing}
 \begin{itemize}
 \item For abbreviations use \verb|.\| or \verb|.~| if a tie is needed
@@ -291,7 +360,7 @@ slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
       Proper & The code is called BART\@. As you can see.
     \end{tabular}
   \end{center}
-\end{itemize}
+\end{itemize}  
 
 \end{multicols}
 \end{document}
