@@ -21,17 +21,18 @@
 \cfoot{\thepage}
 \rfoot{{\small{}Based on AIP Style Guide (4th Edition)}}
 \begin{document}
-
+\raggedbottom
 \tableofcontents
 \pagebreak
 \section{General Guidance}\label{sec:general_guidance}
 
 \begin{multicols}{2}
+\raggedcolumns
 Tables, Figures and Captions
 \begin{itemize}
-\item In Eq. (13), (14), and (16)
-\item In Fig. 4(a)
-\item In Ref. 5
+\item In Eq.~(13),~(14), and~(16)
+\item In Fig.~4(a)
+\item In Ref.~5
 \end{itemize}
 
 Dates and numbers
@@ -50,7 +51,7 @@ Dates and numbers
 \item one throgh ten
 \item 11,12 and above
 \item 2x2 matrix (numerals)
-\item 0.03 and 106.0(no ``naked'' decimal points
+\item 0.03 and 106.0 (no ``naked'' decimal points
 \item 6 V (number before units are always numerals)
 \item 1D, 2D, 3D
 \end{itemize}
@@ -74,6 +75,8 @@ Punctuation
   \end{itemize}
 \item quotation marks after commas and periods, before colons and
   semi-colons
+\item in general, place ``e.g.'' and ``i.e.'' in parenthesis, not
+  commas and include a comma after (e.g., like this). 
 \end{itemize}
 
 Abbreviations
@@ -265,13 +268,30 @@ slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
 \end{equation*}
 \end{itemize}
 
+\pagebreak
 
+\section{Other \LaTeX{} specific items}\label{sec:latex}
 
-
-
-
-
-
+\subsubsection*{Spacing}
+\begin{itemize}
+\item For abbreviations use \verb|.\| or \verb|.~| if a tie is needed
+  (titles or other words that should not be separated).
+  \begin{center}
+    \begin{tabular}[h!]{ll}
+      Normal & e.g. this example; seen in Fig. 1 \\
+      Proper & e.g.\ this example; seen in Fig.~1
+    \end{tabular}
+  \end{center}
+  Note: the bibliography handles this correctly already.
+\item Specify interspace spacing, \verb|\@.| if a capital letter ends
+  a sentence:
+    \begin{center}
+    \begin{tabular}[h!]{ll} 
+      Normal & The code is called BART. As you can see. \\
+      Proper & The code is called BART\@. As you can see.
+    \end{tabular}
+  \end{center}
+\end{itemize}
 
 \end{multicols}
 \end{document}
