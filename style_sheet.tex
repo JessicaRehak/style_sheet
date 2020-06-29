@@ -257,6 +257,9 @@ Place the caption under figures and images and above tables.
 \section{Math and notation}\label{sec:math}
 
 \subsection{Cross-sections}
+Macroscopic cross-sections are used so infrequently in neutronics that
+reserving the use of capital sigma, $\Sigma$, is inefficient. Use the
+following notation to differentiate between the two:
 \begin{itemize}
 \item macroscopic: $\tilde{\sigma}$
 \item microscopic: $\sigma$
@@ -298,7 +301,7 @@ slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
 
 \subsection{Figures}\label{sec:figures}
 \begin{itemize}
-\item Place the `\label{}` for figures inside the caption to ensure
+\item Place the \verb|\label{}| for figures inside the caption to ensure
   correct references:
 \begin{lstlisting}
 \caption{This is the caption.\label{fig:ref}}
