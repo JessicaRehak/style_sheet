@@ -16,6 +16,10 @@
 \definecolor{light-gray}{gray}{0.95}
 \lstset{backgroundcolor=\color{light-gray},basicstyle=\footnotesize\ttfamily}
 % ===========================
+% C++ name formatting
+\newcommand{\Cpp}[1][]{\textrm{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf
+      ++}#1}}
+% ===========================
 \geometry{
   letterpaper,
   left=0.5in,
@@ -281,7 +285,7 @@ slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
     \end{bmatrix}
 \end{equation*}
 \end{itemize}
-
+\end{multicols}
 \pagebreak
 
 \section{Other \LaTeX{} specific items}\label{sec:latex}
@@ -294,6 +298,13 @@ slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
 \end{lstlisting}
 \end{itemize}
 
+\subsubsection*{Programming language names}
+\begin{itemize}
+\item For the \Cpp{} programming language use:
+\begin{lstlisting}
+\newcommand{\Cpp}[1][]{\textrm{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}#1}}
+\end{lstlisting}
+\end{itemize}
 
 \subsubsection*{References and citations}
 
@@ -307,7 +318,7 @@ slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
 \item Use \verb|Sec.~\ref{sec:latex}| for sections, which correctly
   formats as Sec.~\ref{sec:latex}.
 \item For figures, use \verb|Fig.~\ref{fig:image}|, which correctly
-  formats as Fig.~\ref{fig:image}.
+  formats as Fig.~\ref{fig:multifig}.
 \item For subfigures, include the packages and commands:
 \begin{lstlisting}
 \usepackage{caption, subcaption}
@@ -319,26 +330,19 @@ which will format correctly as Fig.~\ref{fig:multifig_a}. See
 documentation for these packages if needed.
 \end{itemize}
 
-\begin{figure*}[b]
+\begin{figure}[h]
   \centering
-  \includegraphics[width=0.2\textwidth]{example-image.pdf}
-  \caption{Single figure}
-  \label{fig:image}
-\end{figure*}
-
-\begin{figure*}
-  \centering
-  \begin{subfigure}[b]{0.4\textwidth}
+  \begin{subfigure}[b]{0.2\textwidth}
     \includegraphics[width=\textwidth]{example-image.pdf}
     \caption{}\label{fig:multifig_a}
-  \end{subfigure}\hfill
-    \begin{subfigure}[b]{0.4\textwidth}
+  \end{subfigure}\hspace{10pt}
+    \begin{subfigure}[b]{0.2\textwidth}
     \includegraphics[width=\textwidth]{example-image.pdf}
     \caption{}\label{fig:multifig_b}
-  \end{subfigure}\hfill
+  \end{subfigure}
   \caption{Subfigure with parts (a) and (b).}
   \label{fig:multifig}
-\end{figure*}
+\end{figure}
 
 
 \subsubsection*{Spacing}
@@ -362,7 +366,7 @@ documentation for these packages if needed.
   \end{center}
 \end{itemize}  
 
-\end{multicols}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
