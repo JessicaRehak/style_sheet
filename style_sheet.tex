@@ -44,7 +44,9 @@
 \section{General Guidance}\label{sec:general_guidance}
 
 \begin{multicols}{2}
-\raggedcolumns
+  \raggedcolumns
+
+\subsection{Figure numbering}
 Tables, Figures and Captions (see Sec.~\ref{sec:latex} for formatting
 properly in \LaTeX).
 \begin{itemize}
@@ -52,8 +54,10 @@ properly in \LaTeX).
 \item In Fig.~4(a)
 \item In Ref.~5
 \end{itemize}
+Place the caption under figures and images and above tables.
 
-Dates and numbers
+\subsection{Dates and numbers}
+\label{sec:dates_and_numbers}
 \begin{itemize}
 \item 02 February 2016 (no commas) 
 \item four or fewer numbers closed up:
@@ -74,7 +78,8 @@ Dates and numbers
 \item 1D, 2D, 3D
 \end{itemize}
 
-Punctuation
+\subsection{Punctuation}
+\label{sec:punctuation}
 \begin{itemize}
 \item en-dash: Paris--London train, (1950--), University of Wisconsin--Madison
 \item serial commas (a, b, and c)
@@ -97,7 +102,8 @@ Punctuation
   commas and include a comma after (e.g., like this). 
 \end{itemize}
 
-Abbreviations
+\subsection{Abbreviations}
+\label{sec:abbreviations}
 \begin{itemize}
 \item Plural add 's: LCAO's
 \end{itemize}
@@ -250,13 +256,13 @@ Abbreviations
 
 \section{Math and notation}\label{sec:math}
 
-\subsubsection*{Cross-sections}
+\subsection{Cross-sections}
 \begin{itemize}
 \item macroscopic: $\tilde{\sigma}$
 \item microscopic: $\sigma$
 \end{itemize}
 
-\subsubsection*{Matrices}
+\subsection{Matrices}
 \begin{itemize}
 \item Bold capital letters, $\mathbf{A}$.
 \item Use brackets (\verb|bmatrix|) for normal matrix, pipes
@@ -264,7 +270,7 @@ Abbreviations
   determinants, and double pipes ($\verb|Vmatrix|$) for a matrix norm.
 \end{itemize}
 
-\subsubsection*{Vectors}
+\subsection{Vectors}
 \begin{itemize}
 \item Topped with an arrow, $\vec{\phi}$. Vector superscripts must be shifted
 slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
@@ -290,7 +296,18 @@ slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
 
 \section{Other \LaTeX{} specific items}\label{sec:latex}
 
-\subsubsection*{Package settings}
+\subsection{Figures}\label{sec:figures}
+\begin{itemize}
+\item Place the `\label{}` for figures inside the caption to ensure
+  correct references:
+\begin{lstlisting}
+\caption{This is the caption.\label{fig:ref}}
+\end{lstlisting}
+\end{itemize}
+
+
+
+\subsection{Package settings}
 \begin{itemize}
 \item Always hide boxes from hyperref package:
 \begin{lstlisting}
@@ -298,15 +315,22 @@ slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
 \end{lstlisting}
 \end{itemize}
 
-\subsubsection*{Programming language names}
+\subsection{Programming language names}
 \begin{itemize}
 \item For the \Cpp{} programming language use:
 \begin{lstlisting}
 \newcommand{\Cpp}[1][]{\textrm{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}#1}}
 \end{lstlisting}
+  This greatly improves the look of the name:
+      \begin{center}
+    \begin{tabular}[h!]{ll} 
+      \verb|C++17| & C++ \\
+      \verb|\Cpp{17}| & \Cpp{17}
+    \end{tabular}
+  \end{center}
 \end{itemize}
 
-\subsubsection*{References and citations}
+\subsection{References and citations}
 
 \begin{itemize}
 \item For equations, use the amsmath \verb|\eqref{label}| function.
@@ -338,14 +362,14 @@ documentation for these packages if needed.
   \end{subfigure}\hspace{10pt}
     \begin{subfigure}[b]{0.2\textwidth}
     \includegraphics[width=\textwidth]{example-image.pdf}
-    \caption{}\label{fig:multifig_b}
+    \caption{\label{fig:multifig_b}}
   \end{subfigure}
   \caption{Subfigure with parts (a) and (b).}
   \label{fig:multifig}
 \end{figure}
 
 
-\subsubsection*{Spacing}
+\subsection{Spacing}
 \begin{itemize}
 \item For abbreviations use \verb|.\| or \verb|.~| if a tie is needed
   (titles or other words that should not be separated).
