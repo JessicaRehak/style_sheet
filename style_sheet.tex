@@ -265,6 +265,46 @@ following notation to differentiate between the two:
 \item microscopic: $\sigma$
 \end{itemize}
 
+\subsection{Integrals}\label{sec:integrals}
+\begin{itemize}
+\item To ease reading, for single-integration integrals with terms that do not
+  end with a parenthesis,  place the differential on the right side, with a space between the
+  last variable and the $d$,
+  \begin{lstlisting}
+    \int f(x)\,dx
+\end{lstlisting}
+  \begin{equation*}
+    \int f(x)\,dx
+  \end{equation*}
+  For multiple-integration integrals with terms that do not start with
+  a parenthesis, place the differential immediately after its corresponding
+  integral symbol, place a space after the last differential:
+\begin{lstlisting}
+    \int_{0}^{1}dx \int_{0}^{1} dy\,f(x,y)
+\end{lstlisting}
+  \begin{equation*}
+    \int_{0}^{1}dx \int_{0}^{1} dy\,f(x,y)
+  \end{equation*}
+  The space helps emphasize that the differential is a single variable. 
+\item Use parenthesis or brackets for any integral with multiple
+  terms, the extra space is not required,
+\begin{lstlisting}
+    \int \left[f(x) + g(x)\right]dx
+\end{lstlisting}
+  \begin{equation*}
+    \int \left[f(x) + g(x)\right]dx
+  \end{equation*}
+\begin{lstlisting}
+    \int_{0}^{1}dx \int_{0}^{1} dy\left[f(x,y) + g(x,y)\right]
+\end{lstlisting}
+  \begin{equation*}
+    \int_{0}^{1}dx \int_{0}^{1} dy\left[f(x,y) + g(x,y)\right]
+  \end{equation*}
+\end{itemize}
+
+
+
+
 \subsection{Matrices}
 \begin{itemize}
 \item Bold capital letters, $\mathbf{A}$.
@@ -308,7 +348,17 @@ slightly using \verb|\vec{\phi}^{\,\ell}|. For comparison:
 \end{lstlisting}
 \end{itemize}
 
-
+\subsection{Labels}
+\label{sec:labels}
+\begin{itemize}
+\item Use the following formats for labels:
+  \begin{center}
+    \begin{tabular}{ll}
+      Chapters & \verb|\label{sec:chapter_name}| \\
+      Sections & \verb|\label{sec:chapter_name:section_name}|
+    \end{tabular}
+  \end{center}
+\end{itemize}
 
 \subsection{Package settings}
 \begin{itemize}
