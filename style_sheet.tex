@@ -267,17 +267,16 @@ following notation to differentiate between the two:
 
 \subsection{Integrals}\label{sec:integrals}
 \begin{itemize}
-\item To ease reading, for single-integration integrals with terms that do not
-  end with a parenthesis,  place the differential on the right side, with a space between the
-  last variable and the $d$,
+\item To ease reading, for single-integration integrals, place the
+  differential on the right side, with a space between the last
+  variable and the $d$,
   \begin{lstlisting}
     \int f(x)\,dx
 \end{lstlisting}
   \begin{equation*}
     \int f(x)\,dx
   \end{equation*}
-  For multiple-integration integrals with terms that do not start with
-  a parenthesis, place the differential immediately after its corresponding
+  For multiple-integration integrals place the differential immediately after its corresponding
   integral symbol, place a space after the last differential:
 \begin{lstlisting}
     \int_{0}^{1}dx \int_{0}^{1} dy\,f(x,y)
@@ -287,18 +286,33 @@ following notation to differentiate between the two:
   \end{equation*}
   The space helps emphasize that the differential is a single variable. 
 \item Use parenthesis or brackets for any integral with multiple
-  terms, the extra space is not required,
+  terms, the extra space is not required if the \verb|\left| and
+    \verb|\right| commands are used, but are required otherwise; see examples:
 \begin{lstlisting}
     \int \left[f(x) + g(x)\right]dx
 \end{lstlisting}
   \begin{equation*}
     \int \left[f(x) + g(x)\right]dx
   \end{equation*}
+  \begin{lstlisting}
+    \int [f(x) + g(x)]\,dx
+\end{lstlisting}
+  \begin{equation*}
+    \int [f(x) + g(x)]\,dx
+  \end{equation*}
 \begin{lstlisting}
-    \int_{0}^{1}dx \int_{0}^{1} dy\left[f(x,y) + g(x,y)\right]
+    \int_{0}^{1}dx \int_{0}^{1} dy\left[f(x,y) 
+             + g(x,y)\right]
 \end{lstlisting}
   \begin{equation*}
     \int_{0}^{1}dx \int_{0}^{1} dy\left[f(x,y) + g(x,y)\right]
+  \end{equation*}
+\begin{lstlisting}
+    \int_{0}^{1}dx \int_{0}^{1} dy\,[f(x,y) 
+             + g(x,y)]
+\end{lstlisting}
+  \begin{equation*}
+    \int_{0}^{1}dx \int_{0}^{1} dy\,[f(x,y) + g(x,y)]
   \end{equation*}
 \end{itemize}
 
