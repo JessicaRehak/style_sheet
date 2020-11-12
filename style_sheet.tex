@@ -12,6 +12,8 @@
 }
 % ===========================
 % Colored code blocks
+\usepackage{tcolorbox}
+\tcbuselibrary{listings}
 \usepackage{xcolor, listings}
 \definecolor{light-gray}{gray}{0.95}
 \lstset{backgroundcolor=\color{light-gray},basicstyle=\footnotesize\ttfamily}
@@ -108,6 +110,12 @@ Place the caption under figures and images and above tables.
 \item Plural add 's: LCAO's
 \end{itemize}
 
+\subsection{Names \& proper nouns}\label{sec:names}
+\begin{itemize}
+\item Book titles should be italicized.
+\item Article titles should be in quotation marks.
+\end{itemize}
+
 \pagebreak
 
 \section{Specific words and terms}\label{sec:words}
@@ -115,6 +123,7 @@ Place the caption under figures and images and above tables.
 \subsubsection*{A}
 \begin{itemize}
 \item $\alpha$ particle
+\item angular-flux (adj)
 \item \textit{ad hoc}
 \item \textit{\`{a} la}
 \item anti-compounds closed (antilogarithm)
@@ -218,6 +227,7 @@ Place the caption under figures and images and above tables.
 
 \subsubsection*{S}
 \begin{itemize}
+\item scalar-flux (adj)
 \item setup
 \item self-compound hyphenated:
   \begin{itemize}
@@ -270,12 +280,11 @@ following notation to differentiate between the two:
 \item To ease reading, for single-integration integrals, place the
   differential on the right side, with a space between the last
   variable and the $d$,
-  \begin{lstlisting}
-    \int f(x)\,dx
-\end{lstlisting}
-  \begin{equation*}
-    \int f(x)\,dx
-  \end{equation*}
+  \begin{tcblisting}{listing side text}
+    \begin{equation*}
+      \int f(x)\,dx
+    \end{equation*}
+  \end{tcblisting}
   For multiple-integration integrals place the differential immediately after its corresponding
   integral symbol, place a space after the last differential:
 \begin{lstlisting}
